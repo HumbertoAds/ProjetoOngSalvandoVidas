@@ -1,0 +1,17 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header, footer {
+    background-color: #f0f0f0;
+    padding: 10px;
+    text-align: center;
+}
+
+@media (max-width: 600px) {
+    nav ul {
+        flex-direction: column; /* Para telas menores, empilha o menu */
+    }
+}
