@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Projetos sociais da ONG Vida em Ação.">
+  <title>ONG Salvando vidas | Projetos</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <h1>ONG Salvando Vidas</h1>
+      <ul>
+        <li><a href="index.html">Início</a></li>
+        <li><a href="projetos.html" class="active">Projetos</a></li>
+        <li><a href="cadastro.html">Cadastro</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="intro">
+      <h2>Nossos Projetos</h2>
+      <p>Conheça as iniciativas que estão transformando comunidades e criando oportunidades.</p>
+    </section>
+
+    <section class="projetos">
+      <article class="projeto">
+        <img src="imagens/educacao.jpg" alt="Projeto Educação para Todos">
+        <h3>Educação para Todos</h3>
+        <p>Oferece aulas de reforço escolar e cursos profissionalizantes gratuitos para jovens.</p>
+      </article>
+
+      <article class="projeto">
+        <img src="imagens/alimentacao.jpg" alt="Projeto Alimenta Ação">
+        <h3>Alimenta Ação</h3>
+        <p>Distribui cestas básicas e promove ações contra a fome em comunidades vulneráveis.</p>
+      </article>
+
+      <article class="projeto">
+        <img src="imagens/tecnologia.jpg" alt="Projeto Tecnologia Solidária">
+        <h3>Tecnologia Solidária</h3>
+        <p>Ensina jovens e idosos a usar a tecnologia para educação e inclusão digital.</p>
+      </article>
+    </section>
+
+    <section class="voluntariado">
+      <h2>Voluntariado</h2>
+      <p>Faça parte do nosso time de voluntários e ajude a transformar vidas.</p>
+      <a href="cadastro.html" class="btn">Quero ser voluntário</a>
+    </section>
+
+    <section class="doacao">
+      <h2>Doações</h2>
+      <p>Sua contribuição faz a diferença. Doe e ajude nossos projetos a continuar crescendo.</p>
+      <button class="btn" onclick="alert('Em breve, sistema de doações online!')">Doar Agora</button>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 ONG Salvando Vidas- Todos os direitos reservados.</p>
+  </footer>
+</body>
+</html>
+
+
