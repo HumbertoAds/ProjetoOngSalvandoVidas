@@ -1,111 +1,331 @@
+/* =========================================================
+   🌙 ONG Salvando Vidas - STYLE.CSS
+   Tema: Escuro Dinâmico e Jovem
+   Autor: Humberto Barbosa
+   ========================================================= */
+
+/* ========================
+   🎨 Design System
+=========================== */
+:root {
+  /* Paleta de cores (8+) */
+  --color-primary: #00c2ff;
+  --color-secondary: #ff4d6d;
+  --color-accent: #ffd60a;
+  --color-success: #22c55e;
+  --color-warning: #fbbf24;
+  --color-error: #ef4444;
+  --color-neutral-100: #121212;
+  --color-neutral-200: #1e1e1e;
+  --color-neutral-300: #2c2c2c;
+  --color-neutral-400: #3d3d3d;
+  --color-text: #f1f1f1;
+  --color-muted: #9ca3af;
+
+  /* Tipografia hierárquica */
+  --font-xs: 0.8rem;
+  --font-sm: 1rem;
+  --font-md: 1.2rem;
+  --font-lg: 1.6rem;
+  --font-xl: 2.2rem;
+  --font-xxl: 3rem;
+
+  /* Espaçamento modular */
+  --space-1: 8px;
+  --space-2: 16px;
+  --space-3: 24px;
+  --space-4: 32px;
+  --space-5: 48px;
+  --space-6: 64px;
+
+  /* Outros */
+  --transition: 0.3s ease-in-out;
+  --radius: 12px;
+}
+
+/* ========================
+   ⚙️ Reset e Base
+=========================== */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Segoe UI", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: #fafafa;
-  color: #333;
+  font-family: "Poppins", sans-serif;
+  background-color: var(--color-neutral-100);
+  color: var(--color-text);
   line-height: 1.6;
 }
 
+/* ========================
+   🧭 Navbar e Menu
+=========================== */
 header {
-  background: #0066cc;
-  color: #fff;
-  padding: 1rem 2rem;
+  background-color: var(--color-neutral-200);
+  padding: var(--space-2) var(--space-3);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
 }
 
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
-
-.navbar ul {
-  list-style: none;
-  display: flex;
-  gap: 1rem;
-}
-
-.navbar a {
-  color: #fff;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-.navbar a.active {
-  text-decoration: underline;
-}
-
-main {
-  padding: 2rem;
-}
-
-.hero {
-  background: url('imagens/banner.jpg') center/cover;
-  color: white;
-  text-align: center;
-  padding: 4rem 1rem;
-}
-
-.btn {
-  background: #0066cc;
-  color: white;
-  padding: 0.6rem 1.2rem;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  text-decoration: none;
-}
-
-.btn:hover {
-  background: #004c99;
-}
-
-.cards {
-  display: flex;
-  gap: 1rem;
   flex-wrap: wrap;
 }
 
-.cards article {
-  flex: 1;
-  min-width: 200px;
-  background: white;
-  padding: 1rem;
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+.navbar h1 {
+  font-size: var(--font-lg);
+  color: var(--color-primary);
+  letter-spacing: 1px;
 }
 
-.projetos {
+/* Menu principal */
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: var(--space-3);
+}
+
+.navbar a {
+  text-decoration: none;
+  color: var(--color-text);
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+.navbar a:hover,
+.navbar a.active {
+  color: var(--color-accent);
+}
+
+/* Menu responsivo (hambúrguer) */
+.menu-toggle {
+  display: none;
+  cursor: pointer;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.menu-toggle span {
+  background: var(--color-text);
+  height: 3px;
+  width: 25px;
+  border-radius: 2px;
+}
+
+/* Dropdown */
+.navbar li {
+  position: relative;
+}
+
+.navbar li ul {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: var(--color-neutral-200);
+  padding: var(--space-2);
+  border-radius: var(--radius);
+}
+
+.navbar li:hover ul {
+  display: block;
+}
+
+/* ========================
+   🧩 Estrutura Geral
+=========================== */
+main {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1.5rem;
+  grid-template-columns: repeat(12, 1fr);
+  gap: var(--space-3);
+  padding: var(--space-5);
+}
+
+/* Sessão de introdução */
+.intro {
+  grid-column: 1 / -1;
+  text-align: center;
+  margin-bottom: var(--space-5);
+}
+
+.intro h2 {
+  font-size: var(--font-xl);
+  color: var(--color-primary);
+  margin-bottom: var(--space-2);
+}
+
+/* ========================
+   🗂️ Cards de Projetos
+=========================== */
+.projetos {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-3);
+}
+
+.projeto {
+  background-color: var(--color-neutral-200);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  transition: var(--transition);
+  cursor: pointer;
+}
+
+.projeto:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(0, 194, 255, 0.2);
 }
 
 .projeto img {
   width: 100%;
-  border-radius: 8px;
+  height: 180px;
+  object-fit: cover;
 }
 
-form {
-  display: grid;
-  gap: 0.8rem;
-  max-width: 500px;
-  margin: auto;
-  background: #fff;
-  padding: 2rem;
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+.projeto h3 {
+  font-size: var(--font-md);
+  color: var(--color-accent);
+  margin: var(--space-2);
 }
 
-footer {
+.projeto p {
+  margin: 0 var(--space-2) var(--space-3);
+  color: var(--color-muted);
+}
+
+/* ========================
+   💬 Sessões: Voluntariado e Doações
+=========================== */
+.voluntariado,
+.doacao {
+  grid-column: 1 / -1;
   text-align: center;
-  background: #0066cc;
-  color: white;
-  padding: 1rem;
-  margin-top: 2rem;
+  background-color: var(--color-neutral-200);
+  padding: var(--space-5);
+  border-radius: var(--radius);
+  margin-top: var(--space-4);
 }
 
+.btn {
+  display: inline-block;
+  padding: var(--space-2) var(--space-3);
+  border: none;
+  border-radius: var(--radius);
+  font-size: var(--font-sm);
+  cursor: pointer;
+  transition: var(--transition);
+  background: var(--color-primary);
+  color: #fff;
+}
+
+.btn:hover {
+  background: var(--color-secondary);
+  transform: scale(1.05);
+}
+
+/* ========================
+   ⚠️ Alerts e Feedback
+=========================== */
+.alert {
+  background-color: var(--color-warning);
+  color: #000;
+  padding: var(--space-2);
+  border-radius: var(--radius);
+  margin-top: var(--space-2);
+}
+
+.toast {
+  position: fixed;
+  bottom: var(--space-3);
+  right: var(--space-3);
+  background: var(--color-neutral-300);
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius);
+  color: var(--color-text);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ========================
+   📱 Responsividade
+=========================== */
+@media (max-width: 1200px) {
+  main {
+    padding: var(--space-4);
+  }
+}
+
+@media (max-width: 992px) {
+  .navbar ul {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .navbar.active ul {
+    display: flex;
+    background: var(--color-neutral-300);
+    padding: var(--space-2);
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+}
+
+@media (max-width: 768px) {
+  .intro h2 {
+    font-size: var(--font-lg);
+  }
+
+  .btn {
+    font-size: var(--font-xs);
+  }
+}
+
+@media (max-width: 576px) {
+  body {
+    font-size: var(--font-xs);
+  }
+}
+
+@media (max-width: 400px) {
+  .navbar h1 {
+    font-size: var(--font-sm);
+  }
+}
+
+/* ========================
+   🦶 Rodapé
+=========================== */
+footer {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: var(--space-3);
+  background-color: var(--color-neutral-200);
+  color: var(--color-muted);
+  font-size: var(--font-xs);
+}
