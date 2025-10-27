@@ -329,3 +329,24 @@ footer {
   color: var(--color-muted);
   font-size: var(--font-xs);
 }
+
+.toast {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 12px 18px;
+  border-radius: 8px;
+  background: #333;
+  color: #fff;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.4s ease;
+  z-index: 9999;
+}
+.toast.visivel {
+  opacity: 1;
+  transform: translateY(0);
+}
+.toast.sucesso { background: #28a745; }
+.toast.erro { background: #e74c3c; }
+
