@@ -126,6 +126,19 @@ document.addEventListener("DOMContentLoaded", () => {
       "Ações sustentáveis para preservar o meio ambiente.",
       "imagens/natureza.jpg"
     );
+
+    // MODO ALTO CONTRASTE
+if(localStorage.getItem("hc") === "1"){
+  document.documentElement.classList.add("high-contrast");
+}
+
+document.getElementById("contrast-toggle")?.addEventListener("click", function(){
+  document.documentElement.classList.toggle("high-contrast");
+  const ativo = document.documentElement.classList.contains("high-contrast");
+  localStorage.setItem("hc", ativo ? "1" : "0");
+  this.setAttribute("aria-pressed", ativo);
+});
+
     secaoProjetos.appendChild(novo);
   }
 });
