@@ -137,6 +137,21 @@ document.getElementById("contrast-toggle")?.addEventListener("click", function()
   const ativo = document.documentElement.classList.contains("high-contrast");
   localStorage.setItem("hc", ativo ? "1" : "0");
   this.setAttribute("aria-pressed", ativo);
+// VALIDAÇÃO ACESSÍVEL
+const campoEmail = document.getElementById("email");
+const msgErroEmail = document.getElementById("email-erro");
+
+campoEmail?.addEventListener("blur", function(){
+  if(!this.value.includes("@")){
+    msgErroEmail.hidden = false;
+    this.setAttribute("aria-invalid", "true");
+  } else {
+    msgErroEmail.hidden = true;
+    this.removeAttribute("aria-invalid");
+  }
+});
+
+
 });
 
     secaoProjetos.appendChild(novo);
