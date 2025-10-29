@@ -8,6 +8,8 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<body>
+  <a class="skip-link" href="#main-content">Pular para o conteúdo</a>
   <header>
     <nav class="navbar">
       <h1>ONG Salvando Vidas</h1>
