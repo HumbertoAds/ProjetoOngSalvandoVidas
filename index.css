@@ -369,6 +369,14 @@ footer {
   border-radius: 6px;
 }
 .btn-contrast:focus {
+   .erro {
+  color: #ff4444;
+  font-size: 14px;
+}
+input[aria-invalid="true"] {
+  border: 2px solid #ff4444;
+}
+
   outline: 3px solid #fff;
 }
 
