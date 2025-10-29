@@ -350,3 +350,26 @@ footer {
 .toast.sucesso { background: #28a745; }
 .toast.erro { background: #e74c3c; }
 
+:root.high-contrast {
+  --color-background: #000000;
+  --color-text: #ffffff;
+  --color-primary: #ffff00;
+}
+
+.high-contrast body {
+  background: var(--color-background);
+  color: var(--color-text);
+}
+
+.btn-contrast {
+  cursor: pointer;
+  padding: 8px 14px;
+  background: #222;
+  color: #fff;
+  border-radius: 6px;
+}
+.btn-contrast:focus {
+  outline: 3px solid #fff;
+}
+
+
