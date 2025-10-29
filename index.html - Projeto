@@ -7,6 +7,9 @@
   <title>ONG Salvando vidas | Projetos</title>
   <link rel="stylesheet" href="style.css">
 </head>
+<button id="contrast-toggle" aria-pressed="false" class="btn-contrast">
+  Alto Contraste
+</button>
 <body>
 <body>
   <a class="skip-link" href="#main-content">Pular para o conteúdo</a>
